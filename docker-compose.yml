@@ -1,0 +1,29 @@
+services:
+  app:
+    build:
+      dockerfile: 'images/php/Dockerfile'
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0.37-bookworm
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER:          user
+      MYSQL_PASSWORD:      'p@ss$wor#d'
+    volumes:
+      - db-data:/var/lib/mysql
+  db_admin:
+    image: phpmyadmin:5.2.3-apache
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST:     db
+      PMA_USER:     user
+      PMA_PASSWORD: 'p@ss$wor#d'
+    depends_on:
+      - db
+
+volumes:
+  db-data:
+
