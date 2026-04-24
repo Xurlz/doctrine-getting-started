@@ -1,8 +1,8 @@
 {
     "require": {
-        "doctrine/orm": "3^",
-        "doctrine/dbal": "3^",
-        "symfony/cache": "7^"
+        "doctrine/orm": "^3",
+        "doctrine/dbal": "^3",
+        "symfony/cache": "^6"
     },
     "autoload": {
         "psr-0": {"":"src/"}
