@@ -9,7 +9,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER:          user
-      MYSQL_PASSWORD:      'p@ss\$wor#d'
+      MYSQL_PASSWORD:      'p@ss$wor#d'
     volumes:
       - db-data:/var/lib/mysql
   db_admin:
@@ -20,7 +20,7 @@ services:
     environment:
       PMA_HOST:     db
       PMA_USER:     user
-      PMA_PASSWORD: 'p@ss\$wor#d'
+      PMA_PASSWORD: 'p@ss$wor#d'
     depends_on:
       - db
 
